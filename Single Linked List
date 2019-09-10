@@ -1,0 +1,103 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class SLL:
+    def __init__(self):
+        self.head=None
+        self.tail=None
+    def insertbeg(self,value):
+        if(self.head==None):
+            self.head=self.tail=Node(value)
+        else:
+            newnode=Node(value)
+            newnode.next=self.head
+            self.head=newnode
+    def insertend(self,value):
+        if(self.head==None):
+            self.head=self.tail=Node(value)
+        else:
+            newnode=Node(value)
+            self.tail.next=newnode
+            self.tail=newnode
+    def insertpos(self,pos1,value):
+        if(pos1==1):
+            newnode=Node(value)
+            newnode.next=self.head
+            self.head=newnode
+        elif(self.head==None):
+            print("list is empty")
+        else:
+            temp=self.head
+            for i in range(1,pos1-1):
+                temp=temp.next
+            newnode=Node(value)
+            newnode.next=temp.next
+            temp.next=newnode
+            temp=None
+    def deletefst(self):
+        if(self.head==None):
+            print("list is empty")
+        else:
+            temp=self.head
+            self.head=temp.next
+    def deletelast(self):
+        if(self.head==None):
+            print("list is empty")
+        else:
+            temp=self.head
+            while(temp.next.next!=None):
+                temp=temp.next
+            temp.next=None
+    def deletepos(self,pos2):
+        if(self.head==None):
+            print("list is empty")
+        else:
+            temp=self.head
+            for i in range(1,pos2-1):
+                temp=temp.next
+            temp.next=temp.next.next
+    def search(self,searchvalue):
+        if(self.head==None):
+            print("list is empty")
+        else:
+            res=0
+            temp=self.head
+            while(temp!=None):
+                if(temp.data==searchvalue ):
+                    res=1
+                temp=temp.next
+            if(res==1):
+                print("data found")
+            else:
+                print("data doesn't found")
+    def update(self,pos3,value):
+        if(pos3==1):
+            temp=self.head
+            temp.data=value
+        elif(self.head==None):
+            print("list is empty")
+        else:
+            temp=self.head
+            for i in range(1,pos3):
+                temp=temp.next
+            temp.data=value
+    def disply(self):
+        temp=self.head
+        while(temp!=None):
+            print(temp.data,end=" ")
+            temp=temp.next
+            
+        
+s=SLL()           
+s.insertbeg(20)
+s.insertbeg(22)
+s.insertbeg(23)
+s.insertend(40)
+s.insertpos(3,3)
+s.update(2,100)
+s.deletefst()
+s.deletelast()
+s.deletepos(2)
+s.search(100)
+s.disply()
