@@ -1,0 +1,55 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Queue:
+    def __init__(self):
+        self.front=None
+        self.rear=None
+    def enqueue(self,value):
+        if(self.front==None):
+            self.front=self.rear=Node(value)
+        else:
+            newnode=Node(value)
+            self.rear.next=newnode
+            self.rear=newnode
+    def dequeue(self):
+        if(self.front==None):
+            print("list is empty")
+        else:
+            temp=self.front
+            self.front=temp.next
+    def search(self,searchvalue):
+        if(self.front==None):
+            print("list is empty")
+        else:
+            res=0
+            temp=self.front
+            while(temp!=None):
+                if(temp.data==searchvalue ):
+                    res=1
+                temp=temp.next
+            if(res==1):
+                print("data found")
+            else:
+                print("data doesn't found")
+    def update(self,value):
+        if(self.front==None):
+            print("list is empty")
+        else:
+            self.rear.data=value
+    def disply(self):
+        temp=self.front
+        while(temp!=None):
+            print(temp.data,end=" ")
+            temp=temp.next
+            
+        
+s=Queue()           
+s.enqueue(23)
+s.enqueue(30)
+s.enqueue(40)
+s.dequeue()
+s.search(402)
+s.update(50)
+s.disply()
