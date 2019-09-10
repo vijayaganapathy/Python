@@ -1,0 +1,147 @@
+list1=[1,2,3,4]
+def insfun2():
+    num=int(input("enter element to add into the list   "))
+    list1.append(num)
+def insfun1():
+    num=int(input("enter element to add into the list   "))
+    list1.insert(0,num)
+def insfun3():
+    pos,num2=map(int,input("enter Position and value   ").split())
+    list1.insert(pos,num2)
+def delfun1():
+    del list1[0]
+def delfun2():
+    del list1[-1]
+def delfun3():
+    pos1=int(input("eneter Position to Delete the element   "))
+    del list1[pos1]
+def searfun1():
+    searchelement=int(input("enter Search value   "))
+    if(searchelement in list1):
+        print("searching element found")
+    else:
+        print("searching element not found")
+def updatefun1():
+    old,new=map(int,input("enter old and new value   ").split())
+    if(old in list1):
+     for i in range(0,len(list1)):
+        if(list1[i]==old):
+            list1[i]=new
+    else:
+        print("data not found")
+ans=True
+while(ans):
+ print("LINKED LIST")
+ print("Select Operation")
+ print("1.Insertion")
+ print("2.Deletion")
+ print("3.Search")
+ print("4.Update")
+ print("5.Exit")   
+ ans=int(input("what would you like to do""    "))
+ if(ans==1):
+  print("Select Insert Mode")
+  print("1.Insert First")
+  print("2.Insert Last")
+  print("3.Insert Position")
+  ins=int(input("what would you like to do""    "))   
+  if(ins==1):
+      print("Insert First")
+      insfun1()
+      print(list1)
+  elif(ins==2):
+      print("Insert Last")
+      insfun2()
+      print(list1)
+  elif(ins==3):
+      print("Insert Position")
+      insfun3()
+      print(list1)
+  else:
+      print("Unknown Option Selected")
+ elif(ans==2):
+  print("Select Delete Mode")
+  print("1.Delete First")
+  print("2.Delete Last")
+  print("3.Delete Position")
+  del1=int(input("what would you like to do""    "))   
+  if(del1==1):
+      print("Delete First")
+      delfun1()
+      print(list1)
+  elif(del1==2):
+      print("Delete Last")
+      delfun2()
+      print(list1)
+  elif(del1==3):
+      print("Delete Position")
+      delfun3()
+      print(list1)
+  else:
+      print("Unknown Option Selected")
+ elif(ans==3):
+     print("Search")
+     searfun1()
+ elif(ans==4):
+     print("Update")
+     updatefun1()
+     print(list1)
+ elif(ans==5):
+     print("Goodbye")
+     break
+ else:
+     print("Unknown Option Selected")
+menu in linked list
+list1=[1,2]
+def fun1():
+    num=int(input("enter element to add into the list   "))
+    list1.append(num)
+ans=True
+while(ans):
+ print("LINKED LIST")
+ print("Select Operation")
+ print("1.Insertion")
+ print("2.Deletion")
+ print("3.Update")
+ print("4.Search")
+ print("5.Exit")   
+ ans=int(input("what would you like to do""    "))
+ if(ans==1):
+  print("Select Insert Mode")
+  print("1.Insert First")
+  print("2.Insert Last")
+  print("3.Insert Position")
+  ins=int(input("what would you like to do""    "))   
+  if(ins==1):
+      print("Insert First")
+  elif(ins==2):
+      print("Insert Last")
+      fun1()
+      print(list1)
+  elif(ins==3):
+      print("Insert Position")
+  else:
+      print("Unknown Option Selected")
+ elif(ans==2):
+  print("Select Delete Mode")
+  print("1.Delete First")
+  print("2.Delete Last")
+  print("3.Delete Position")
+  del1=int(input("what would you like to do""    "))   
+  if(del1==1):
+      print("Delete First")
+  elif(del1==2):
+      print("Delete Last")
+  elif(del1==3):
+      print("Delete Position")
+  else:
+      print("Unknown Option Selected")
+ elif(ans==3):
+     print("Search")
+ elif(ans==4):
+     print("Update")
+ elif(ans==5):
+     print("Goodbye")
+     break
+ else:
+     print("Unknown Option Selected")
