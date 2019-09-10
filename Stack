@@ -1,0 +1,48 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Stack:
+    def __init__(self):
+        self.top=None
+        self.oldtop=None
+    
+    def push(self,value):
+        if(self.top==None):
+            self.top=Node(value)
+            # temp=self.top
+            # print(temp.data)
+        else:
+            newnode=Node(value)
+            self.oldtop=self.top
+            self.top.next=newnode
+            self.top=newnode
+            # temp=self.top
+            # print(temp.data)
+    def pop(self):
+        if(self.top==None):
+            print("list has no element")
+            
+        else:
+            
+            self.top=self.oldtop
+            #temp=None
+    def peek(self):
+        temp=self.top
+        print(temp.data)
+        
+            
+        
+s=Stack()  
+s.push(40)
+s.peek()
+s.push(400)
+s.peek()
+s.pop()
+s.peek()
+s.push(402)
+s.peek()
+s.push(404)
+s.peek()
+s.pop()
+s.peek()
