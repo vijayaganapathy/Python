@@ -394,3 +394,8 @@ INPUT
 hello world
 OUTPUT
 world hello
+
+S=input().split()
+first=S[0]
+second=S[1]
+print(second,first)
